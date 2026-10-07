@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>App Virtual Service</title>
+<meta name="description" content="Baixe o aplicativo Virtual Service para iPhone ou Android e veja os vídeos de como usar.">
+<meta name="theme-color" content="#1F1B1E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<style>
+/* Layout: faixa escura de impacto com os botões das lojas, miolo claro com os três vídeos, ajuda e rodapé escuro */
+:root{
+  --azul:#0084B1; --azul-esc:#0A6F94; --azul-cl:#48A6C9;
+  --grafite:#373135; --noite:#1F1B1E; --noite-2:#2A2529;
+  --cinza:#6B656A; --claro:#F4F5F7; --branco:#FFFFFF;
+  --f-titulo:'Montserrat', 'Segoe UI', Arial, sans-serif;
+  --f-texto:'Inter', 'Segoe UI', Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--claro);color:var(--grafite);font-family:var(--f-texto);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+a{color:var(--azul)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--azul-cl);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* topo */
+.topo{background:var(--noite);color:var(--branco);border-top:8px solid var(--azul);padding-block:28px 56px}
+.logo{height:44px;width:auto}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:44px}
+.hero>*{min-width:0}
+.kicker{font-family:var(--f-titulo);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--azul-cl);margin:0}
+h1{font-family:var(--f-titulo);font-weight:800;font-size:clamp(30px,6vw,48px);line-height:1.1;margin:10px 0 0;text-wrap:balance;letter-spacing:-.01em}
+.lead{color:#D9D6D8;font-size:17px;max-width:46ch;margin:14px 0 0}
+.lojas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:14px;max-width:620px}
+.btn{display:flex;align-items:center;gap:14px;text-decoration:none;border-radius:14px;padding:16px 20px;min-height:72px;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{flex:none;width:30px;height:30px}
+.btn small{display:block;font-family:var(--f-texto);font-size:13px;font-weight:500;opacity:.85}
+.btn strong{display:block;font-family:var(--f-titulo);font-size:19px;font-weight:700;line-height:1.2}
+.btn.primario{background:var(--azul);color:var(--branco)}
+.btn.primario:hover{background:var(--azul-esc)}
+.btn.secundario{background:transparent;color:var(--branco);border:2px solid #4A4348}
+.btn.secundario:hover{border-color:var(--azul-cl)}
+.selo{display:inline-block;margin-top:6px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--branco);color:var(--azul-esc);border-radius:99px;padding:2px 8px}
+
+/* vídeos */
+.secao{padding-block:56px}
+.cabeca{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 24px;margin-bottom:28px}
+h2{font-family:var(--f-titulo);font-weight:800;font-size:clamp(24px,4vw,32px);color:var(--noite);margin:0;text-wrap:balance}
+.cabeca .linha{display:block;width:48px;height:4px;background:var(--azul);border-radius:2px;margin-top:12px}
+.cabeca p{margin:0;color:var(--cinza);max-width:42ch}
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px}
+.video{background:var(--branco);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;border:1px solid #E3E4E8;min-width:0}
+.video .tela{background:var(--noite);display:flex;justify-content:center}
+.video video{width:100%;max-height:560px;aspect-ratio:9/16;object-fit:contain;background:var(--noite);display:block}
+.video .info{padding:18px 20px 22px;display:grid;gap:6px}
+.tag{font-family:var(--f-titulo);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azul)}
+.video h3{font-family:var(--f-titulo);font-size:19px;font-weight:700;color:var(--noite);margin:0}
+.video p{margin:0;color:var(--cinza);font-size:15px}
+
+/* ajuda */
+.ajuda{background:var(--branco);border:1px solid #E3E4E8;border-radius:16px;padding:24px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.ajuda h2{font-size:22px}
+.ajuda p{margin:4px 0 0;color:var(--cinza)}
+.contatos{display:flex;flex-wrap:wrap;gap:12px}
+.contato{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--noite);font-weight:600;border:2px solid #E3E4E8;border-radius:12px;padding:12px 16px;min-height:48px}
+.contato:hover{border-color:var(--azul)}
+.contato svg{width:20px;height:20px;flex:none;color:var(--azul)}
+
+/* rodapé */
+.rodape{background:var(--noite);color:#BDB8BB;padding-block:28px;font-size:14px}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.rodape img{height:30px;width:auto}
+.rodape a{color:var(--azul-cl);text-decoration:none;font-weight:600}
+
+@media (min-width:860px){
+  .hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:end}
+}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <img class="logo" src="logo.png" alt="Virtual Service">
+    <div class="hero">
+      <div>
+        <p class="kicker">Aplicativo do morador</p>
+        <h1>Baixe o app Virtual Service</h1>
+        <p class="lead">Libere visitantes, acompanhe suas encomendas e fale com a portaria do seu condomínio direto pelo celular.</p>
+      </div>
+      <div style="display:grid;gap:16px">
+        <div class="lojas" id="lojas">
+          <a class="btn primario" id="btn-ios" href="https://apps.apple.com/br/app/virtual-service/id6759395493" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"></rect><path d="M12 7v7m-3-3 3 3 3-3"></path><path d="M10.5 18.5h3"></path></svg>
+            <span><small>Para iPhone</small><strong>Baixar na App Store</strong><span class="selo" id="selo-ios" hidden>Recomendado para você</span></span>
+          </a>
+          <a class="btn primario" id="btn-android" href="https://play.google.com/store/apps/details?id=br.com.econdos.v8service" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"></rect><path d="M12 7v7m-3-3 3 3 3-3"></path><path d="M10.5 18.5h3"></path></svg>
+            <span><small>Para Android</small><strong>Baixar no Google Play</strong><span class="selo" id="selo-android" hidden>Recomendado para você</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="secao" aria-labelledby="t-videos">
+    <div class="wrap">
+      <div class="cabeca">
+        <div><h2 id="t-videos">Aprenda a usar</h2><span class="linha"></span></div>
+        <p>Vídeos curtos, direto da tela do celular. Comece pelo primeiro acesso.</p>
+      </div>
+      <div class="videos">
+        <article class="video" id="primeiro">
+          <div class="tela"><video controls playsinline preload="metadata" src="primeiro.mp4" poster="primeiro.jpg" aria-label="Vídeo do primeiro acesso"></video></div>
+          <div class="info">
+            <span class="tag">Comece por aqui</span>
+            <h3>Primeiro acesso</h3>
+            <p>Baixe o aplicativo, crie o seu acesso, tire a foto do rosto e solicite a sua unidade.</p>
+          </div>
+        </article>
+        <article class="video" id="encomendas">
+          <div class="tela"><video controls playsinline preload="metadata" src="encomendas.mp4" poster="encomendas.jpg" aria-label="Vídeo de como retirar encomendas"></video></div>
+          <div class="info">
+            <span class="tag">Encomendas</span>
+            <h3>Retirar encomendas</h3>
+            <p>Veja quando a encomenda chega, avise a portaria e confirme a retirada pelo QR code.</p>
+          </div>
+        </article>
+        <article class="video" id="visitantes">
+          <div class="tela"><video controls playsinline preload="metadata" src="visitantes.mp4" poster="visitantes.jpg" aria-label="Vídeo de como liberar visitantes"></video></div>
+          <div class="info">
+            <span class="tag">Visitantes</span>
+            <h3>Liberar visitantes</h3>
+            <p>Crie o convite, envie pelo WhatsApp e aprove a entrada do visitante.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" style="padding-top:0" aria-labelledby="t-ajuda">
+    <div class="wrap">
+      <div class="ajuda">
+        <div>
+          <h2 id="t-ajuda">Precisa de ajuda?</h2>
+          <p>Nosso suporte responde pelo WhatsApp e por email.</p>
+        </div>
+        <div class="contatos">
+          <a class="contato" href="https://wa.me/5527936181611" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"></path></svg>
+            (27) 93618 1611
+          </a>
+          <a class="contato" href="mailto:sac@virtualservicebr.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+            sac@virtualservicebr.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <img src="logo.png" alt="Virtual Service">
+    <span>Monitoramento e segurança eletrônica · <a href="https://virtualservicetec.com.br">virtualservicetec.com.br</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ua = navigator.userAgent || '';
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  var lojas = document.getElementById('lojas');
+  var bIos = document.getElementById('btn-ios');
+  var bAnd = document.getElementById('btn-android');
+  if (ios) {
+    document.getElementById('selo-ios').hidden = false;
+    bAnd.className = 'btn secundario';
+  } else if (android) {
+    document.getElementById('selo-android').hidden = false;
+    bIos.className = 'btn secundario';
+    lojas.insertBefore(bAnd, bIos);
+  }
+})();
+</script>
+</body>
+</html>
