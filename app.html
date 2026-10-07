@@ -85,7 +85,7 @@ h2{font-family:var(--f-titulo);font-weight:800;font-size:clamp(24px,4vw,32px);co
   .hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:end}
 }
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
-</style>
+.capa .play{position:absolute;left:50%;top:68.5%;width:9.5%;min-width:36px;max-width:56px;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,132,177,.88);box-shadow:0 0 0 3px rgba(255,255,255,.7),0 6px 16px rgba(6,74,99,.28);display:flex;align-items:center;justify-content:center;transition:transform .15s ease,background .15s ease;pointer-events:none}.capa:hover .play,.capa:focus-visible .play{transform:translate(-50%,-50%) scale(1.07);background:#0084B1}.capa .play svg{width:42%;height:auto;margin-left:8%;display:block}</style>
 </head>
 <body>
 
@@ -123,7 +123,7 @@ h2{font-family:var(--f-titulo);font-weight:800;font-size:clamp(24px,4vw,32px);co
       </div>
       <div class="videos">
         <article class="video" id="primeiro">
-          <div class="tela"><button class="capa" type="button" aria-label="Assistir o vídeo: Primeiro acesso"><img src="capa_primeiro.jpg" alt="" width="1280" height="720"></button><video controls playsinline preload="none" src="primeiro.mp4" poster="capa_primeiro.jpg" aria-label="Vídeo do primeiro acesso" hidden></video></div>
+          <div class="tela"><button class="capa" type="button" aria-label="Assistir o vídeo: Primeiro acesso"><img src="capa_primeiro.jpg" alt="" width="1280" height="720"><span class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M7 4.6v14.8a1 1 0 0 0 1.52.85l12.1-7.4a1 1 0 0 0 0-1.7l-12.1-7.4A1 1 0 0 0 7 4.6z" fill="#FFFFFF"/></svg></span></button><video controls playsinline preload="none" src="primeiro.mp4" poster="capa_primeiro.jpg" aria-label="Vídeo do primeiro acesso" hidden></video></div>
           <div class="info">
             <span class="tag">Comece por aqui</span>
             <h3>Primeiro acesso</h3>
@@ -131,7 +131,7 @@ h2{font-family:var(--f-titulo);font-weight:800;font-size:clamp(24px,4vw,32px);co
           </div>
         </article>
         <article class="video" id="encomendas">
-          <div class="tela"><button class="capa" type="button" aria-label="Assistir o vídeo: Retirar encomendas"><img src="capa_encomendas.jpg" alt="" width="1280" height="720"></button><video controls playsinline preload="none" src="encomendas.mp4" poster="capa_encomendas.jpg" aria-label="Vídeo de como retirar encomendas" hidden></video></div>
+          <div class="tela"><button class="capa" type="button" aria-label="Assistir o vídeo: Retirar encomendas"><img src="capa_encomendas.jpg" alt="" width="1280" height="720"><span class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M7 4.6v14.8a1 1 0 0 0 1.52.85l12.1-7.4a1 1 0 0 0 0-1.7l-12.1-7.4A1 1 0 0 0 7 4.6z" fill="#FFFFFF"/></svg></span></button><video controls playsinline preload="none" src="encomendas.mp4" poster="capa_encomendas.jpg" aria-label="Vídeo de como retirar encomendas" hidden></video></div>
           <div class="info">
             <span class="tag">Encomendas</span>
             <h3>Retirar encomendas</h3>
@@ -139,7 +139,7 @@ h2{font-family:var(--f-titulo);font-weight:800;font-size:clamp(24px,4vw,32px);co
           </div>
         </article>
         <article class="video" id="visitantes">
-          <div class="tela"><button class="capa" type="button" aria-label="Assistir o vídeo: Liberar visitantes"><img src="capa_visitantes.jpg" alt="" width="1280" height="720"></button><video controls playsinline preload="none" src="visitantes.mp4" poster="capa_visitantes.jpg" aria-label="Vídeo de como liberar visitantes" hidden></video></div>
+          <div class="tela"><button class="capa" type="button" aria-label="Assistir o vídeo: Liberar visitantes"><img src="capa_visitantes.jpg" alt="" width="1280" height="720"><span class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M7 4.6v14.8a1 1 0 0 0 1.52.85l12.1-7.4a1 1 0 0 0 0-1.7l-12.1-7.4A1 1 0 0 0 7 4.6z" fill="#FFFFFF"/></svg></span></button><video controls playsinline preload="none" src="visitantes.mp4" poster="capa_visitantes.jpg" aria-label="Vídeo de como liberar visitantes" hidden></video></div>
           <div class="info">
             <span class="tag">Visitantes</span>
             <h3>Liberar visitantes</h3>
